@@ -23,7 +23,7 @@
                                     <button name="open_experience_wizard" class="oe_stat_button" icon="fa-briefcase"
                                             type="object">
                                         <div class="o_field_widget o_stat_info">
-                                            <span class="o_stat_value"><field name="years_of_experience"/></span>
+                                            <span class="o_stat_value"><field name="years_of_experience" readonly="1"/></span>
                                             <span class="o_stat_text">Edit years</span>
                                         </div>
                                     </button>

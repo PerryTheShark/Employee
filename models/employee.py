@@ -11,10 +11,13 @@ class HrEmployee(models.Model):
     def action_button_test(self):
         raise UserError("An offer as already been accepted.")
 
-    def write(self, vals):
-        res = super(HrEmployee, self).write(vals)
-        if(self.years_of_experience < 0):
-            raise ValidationError("The years of experience must be positive")
+    @api.model
+    def write(self,vals_list):
+        res = super(HrEmployee, self).write(vals_list)
+        if 'years_of_experience' in vals_list:
+            for record in self:
+                if record.years_of_experience < 0:
+                    raise ValidationError("The years of experience must be positive")
         return res
 
     @api.model
