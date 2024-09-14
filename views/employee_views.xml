@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="id_employees_view_tree" model="ir.ui.view">
+            <field name="model">hr.employee</field>
+            <field name="inherit_id"
+                   ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <field name="work_email" position="after">
+                    <field name="years_of_experience"/>
+                </field>
+            </field>
+
+        </record>
+
+        <record id="employee_view_form" model="ir.ui.view">
+            <field name="name">employee.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id"
+                   ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                                <div name="button_box" class="oe_button_box">
+                                    <button name="open_experience_wizard" class="oe_stat_button" icon="fa-briefcase"
+                                            type="object">
+                                        <div class="o_field_widget o_stat_info">
+                                            <span class="o_stat_value"><field name="years_of_experience"/></span>
+                                            <span class="o_stat_text">Edit years</span>
+                                        </div>
+                                    </button>
+                                </div>
+                <field name="coach_id" position="after">
+                    <field name="years_of_experience"/>
+                    <field name="the_past_company"/>
+                    <field name="code" readonly="1"/>
+                    <button name="open_experience_wizard" type="object" string="Edit years"
+                            class="btn-secondary" icon="fa-pencil"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="employee_action" model="ir.actions.act_window">
+            <field name="name">List of employee</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>
