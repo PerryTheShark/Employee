@@ -1,5 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_employee,employee.optional.job,model_hr_employee,base.group_user,1,0,0,0
 access_update_batch_employees,employee.batch.update.wizard,model_employee_batch_update_wizard,base.group_user,1,1,1,1
 access_manager,employee.manager,model_hr_employee,Employee.group_employee_manager,1,1,1,1
 hr.access_hr_employee_user,hr.employee user,model_hr_employee,hr.group_hr_user,1,0,0,0
