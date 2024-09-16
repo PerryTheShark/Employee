@@ -2,13 +2,13 @@ from odoo import  models, fields, api
 from odoo.api import constrains
 from odoo.exceptions import UserError, ValidationError
 
-class Skills(models.Model):
-    _name = "employee.skill"
-    _description = "skill of employee"
+class Certifications(models.Model):
+    _name = "employee.certification"
+    _description = "certifications of employee"
     _order = "id desc"
-    # ---------------------------------------- Default Methods -------
+# ---------------------------------------- Default Methods -------
 
-    # ---------------------------------------- Fields Declaration ----
+# ---------------------------------------- Fields Declaration ----
     name = fields.Char(string='Name')
     description = fields.Text(string='Description')
     date = fields.Date(string='Date')
@@ -16,4 +16,4 @@ class Skills(models.Model):
 
     # Relational
     employee_id = fields.Many2many('hr.employee', string='Employee')
-    # ------------------------
+    #----------------------------------------- Action Methods -------

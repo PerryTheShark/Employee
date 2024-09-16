@@ -11,6 +11,8 @@
         'security/employee_security.xml',
         'security/ir.model.access.csv',
         'views/employee_views.xml',
+        'views/certification_views.xml',
+        'views/skill_views.xml',
         'wizard/batch_update.xml',
         'data/employee.xml',
         'views/menu.xml'

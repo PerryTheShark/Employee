@@ -2,5 +2,7 @@
 <odoo>
     <menuitem id="employee_root_menu" name="employee management">
         <menuitem id="employee_menu" name="employee" action="employee_action"/>
+        <menuitem id="certification_menu" name="Certification" action="action_employee_certification"/>
+        <menuitem id="skill_menu" name="Skill" action="action_employee_skill"/>
     </menuitem>
 </odoo>

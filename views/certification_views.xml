@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_employee_certification_tree" model="ir.ui.view">
+            <field name="name">employee.certification.view.tree</field>
+            <field name="model">employee.certification</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Certification">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="date"/>
+                    <field name="expiration_date"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_employee_certification_form" model="ir.ui.view">
+            <field name="name">employee.certification.view.form</field>
+            <field name="model">employee.certification</field>
+            <field name="arch" type="xml">
+                <form string="Library Book">
+                    <sheet>
+                        <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="date"/>
+                    <field name="expiration_date"/>
+                    <field name="employee_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Kanban View -->
+        <record id="view_employee_certification_kanban" model="ir.ui.view">
+            <field name="name">employee.certification.view.kanban</field>
+            <field name="model">employee.certification</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="date"/>
+                    <field name="expiration_date"/>
+                    <field name="employee_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <strong><field name="name"/></strong>
+                                <div><field name="expiration_date"/></div>
+                                <div><field name="employee_id"/></div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_employee_certification" model="ir.actions.act_window">
+            <field name="name">Employee Certifications</field>
+            <field name="res_model">employee.certification</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+    </data>
+</odoo>
