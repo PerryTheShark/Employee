@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_employee_skill_score_tree" model="ir.ui.view">
+            <field name="name">employee.skill.score.view.tree</field>
+            <field name="model">employee.skill.score</field>
+            <field name="arch" type="xml">
+                <tree string="skill score">
+                            <field name="score"/>
+                            <field name="employee_id"/>
+                            <field name="skill_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_employee_skill_score_form" model="ir.ui.view">
+            <field name="name">employee.skill.score.view.form</field>
+            <field name="model">employee.skill.score</field>
+            <field name="arch" type="xml">
+                <form string="Skill score">
+                    <sheet>
+                        <group>
+                            <field name="score"/>
+                            <field name="employee_id"/>
+                            <field name="skill_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_employee_skill_score" model="ir.actions.act_window">
+            <field name="name">skills score</field>
+            <field name="res_model">employee.skill.score</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

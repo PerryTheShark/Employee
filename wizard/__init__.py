@@ -1,1 +1,1 @@
-from . import batch_update
+from . import batch_update, batch_update_v2

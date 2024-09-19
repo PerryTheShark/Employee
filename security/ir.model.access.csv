@@ -4,3 +4,5 @@ access_manager,employee.manager,model_hr_employee,Employee.group_employee_manage
 hr.access_hr_employee_user,hr.employee user,model_hr_employee,hr.group_hr_user,1,0,0,0
 access_emloyee_certification,employee.certification,model_employee_certification,base.group_user,1,1,1,1
 access_emloyee_skill,employee.skill,model_employee_skill,base.group_user,1,1,1,1
+access_emloyee_skill_score,employee.skill.score,model_employee_skill_score,base.group_user,1,1,1,1
+access_update_batch_employees_v1,employee.batch.update,model_employee_batch_update,base.group_user,1,1,1,1

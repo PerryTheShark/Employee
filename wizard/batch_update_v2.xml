@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_employee_batch_update" model="ir.ui.view">
+    <record id="view_employee_batch_update_v2" model="ir.ui.view">
         <field name="name">view.employee.batch.update</field>
         <field name="model">employee.batch.update.wizard</field>
         <field name="arch" type="xml">
             <form string="Batch Update">
                 <group>
-                    <group>
                         <field name="years_of_experience"/>
-                    </group>
+                        <field name="certification_ids"/>
                 </group>
                 <p>
                     Apply updating on the selected record(s)?
                 </p>
                 <footer>
-                    <button string="Confirm" name="multi_update" type="object" default_focus="1" class="btn-primary"/>
+                    <button string="Confirm" name="add_certificates_to_employees" type="object" default_focus="1" class="btn-primary"/>
                     <button string="Cancel" class="btn-default" special="cancel"/>
                 </footer>
             </form>
@@ -22,11 +21,11 @@
     </record>
 
     <record id="action_employee_batch_update" model="ir.actions.act_window">
-        <field name="name">Batch Update</field>
-        <field name="res_model">employee.batch.update</field>
+        <field name="name">Batch Update V2</field>
+        <field name="res_model">employee.batch.update.wizard</field>
         <field name="binding_model_id" ref="model_hr_employee"/>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="view_id" ref="view_employee_batch_update"/>
+        <field name="view_id" ref="view_employee_batch_update_v2"/>
     </record>
 </odoo>

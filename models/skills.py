@@ -4,16 +4,27 @@ from odoo.exceptions import UserError, ValidationError
 
 class Skills(models.Model):
     _name = "employee.skill"
-    _description = "skill of employee"
+    _description = "skill"
     _order = "id desc"
     # ---------------------------------------- Default Methods -------
 
     # ---------------------------------------- Fields Declaration ----
     name = fields.Char(string='Name')
     description = fields.Text(string='Description')
-    date = fields.Date(string='Date')
-    expiration_date = fields.Date(string='Expiration Date')
 
     # Relational
-    employee_id = fields.Many2many('hr.employee', string='Employee')
+    score_id = fields.One2many('employee.skill.score','skill_id' , string='Score')
     # ------------------------
+
+class SkillScore(models.Model):
+    _name = "employee.skill.score"
+    _description = "score of skill of employee"
+    _order = "id desc"
+    # ---------------------------------------- Default Methods -------
+
+    # ---------------------------------------- Fields Declaration ----
+    score = fields.Integer(string='Score')
+
+    # Relational
+    skill_id = fields.Many2one('employee.skill', string='Skill')
+    employee_id = fields.Many2one('hr.employee', string='Employee')

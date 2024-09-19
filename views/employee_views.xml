@@ -19,15 +19,17 @@
             <field name="inherit_id"
                    ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
-                                <div name="button_box" class="oe_button_box">
-                                    <button name="open_experience_wizard" class="oe_stat_button" icon="fa-briefcase"
-                                            type="object">
-                                        <div class="o_field_widget o_stat_info">
-                                            <span class="o_stat_value"><field name="years_of_experience" readonly="1"/></span>
-                                            <span class="o_stat_text">Edit years</span>
-                                        </div>
-                                    </button>
-                                </div>
+                <div name="button_box" class="oe_button_box">
+                    <button name="open_experience_wizard" class="oe_stat_button" icon="fa-briefcase"
+                            type="object">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="years_of_experience" readonly="1"/>
+                            </span>
+                            <span class="o_stat_text">Edit years</span>
+                        </div>
+                    </button>
+                </div>
                 <field name="coach_id" position="after">
                     <field name="years_of_experience"/>
                     <field name="the_past_company"/>
@@ -35,6 +37,27 @@
                     <button name="open_experience_wizard" type="object" string="Edit years"
                             class="btn-secondary" icon="fa-pencil"/>
                 </field>
+                <xpath expr="//page[@name='public']" position="before">
+                    <page name="cetificate" string="Certifications">
+                        <group>
+                            <field name="certificate_ids"/>
+                        </group>
+                        <group>
+                            <field mode="tree" name="score_id">
+                                <tree>
+                                    <field name="score" widget="progressbar"/>
+                                    <field name="employee_id"/>
+                                    <field name="skill_id"/>
+                                </tree>
+                            </field>
+<!--                            <field name="score_id"/>-->
+                        </group>
+
+                    </page>
+                </xpath>
+                <xpath expr="//div[@class='oe_chatter']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
             </field>
         </record>
 

@@ -9,9 +9,7 @@
                 <tree string="Employee skill">
                     <field name="name"/>
                     <field name="description"/>
-                    <field name="date"/>
-                    <field name="expiration_date"/>
-                    <field name="employee_id"/>
+
                 </tree>
             </field>
         </record>
@@ -24,11 +22,9 @@
                 <form string="Library Book">
                     <sheet>
                         <group>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <field name="date"/>
-                    <field name="expiration_date"/>
-                    <field name="employee_id"/>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="score_id"/>
                         </group>
                     </sheet>
                 </form>
@@ -43,15 +39,10 @@
                 <kanban>
                     <field name="name"/>
                     <field name="description"/>
-                    <field name="date"/>
-                    <field name="expiration_date"/>
-                    <field name="employee_id"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_card">
                                 <strong><field name="name"/></strong>
-                                <div><field name="expiration_date"/></div>
-                                <div><field name="employee_id"/></div>
                             </div>
                         </t>
                     </templates>

@@ -12,7 +12,9 @@
                     <field name="date"/>
                     <field name="expiration_date"/>
                     <field name="employee_id"/>
+                    <field name="score" class="oe_left" type="char"/>
                 </tree>
+
             </field>
         </record>
 
@@ -21,15 +23,19 @@
             <field name="name">employee.certification.view.form</field>
             <field name="model">employee.certification</field>
             <field name="arch" type="xml">
-                <form string="Library Book">
+                <form string="Certification">
                     <sheet>
                         <group>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <field name="date"/>
-                    <field name="expiration_date"/>
-                    <field name="employee_id"/>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="date"/>
+                            <field name="expiration_date"/>
                         </group>
+                        <notebook>
+                            <page string="Employees earned certificate">
+                                <field name="employee_id"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -49,9 +55,15 @@
                     <templates>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_card">
-                                <strong><field name="name"/></strong>
-                                <div><field name="expiration_date"/></div>
-                                <div><field name="employee_id"/></div>
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                                <div>
+                                    <field name="expiration_date"/>
+                                </div>
+                                <div>
+                                    <field name="employee_id"/>
+                                </div>
                             </div>
                         </t>
                     </templates>

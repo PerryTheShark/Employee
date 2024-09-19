@@ -2,7 +2,7 @@ from odoo import models, fields
 from odoo.exceptions import UserError, ValidationError
 
 class BatchUpdateWizard(models.TransientModel):
-    _name = "employee.batch.update.wizard"
+    _name = "employee.batch.update"
     _description = "Batch Update Wizard for hr.employee model"
 
     years_of_experience = fields.Integer(string='years of experience', default='0')

@@ -6,6 +6,7 @@ class Certifications(models.Model):
     _name = "employee.certification"
     _description = "certifications of employee"
     _order = "id desc"
+
 # ---------------------------------------- Default Methods -------
 
 # ---------------------------------------- Fields Declaration ----
@@ -13,6 +14,7 @@ class Certifications(models.Model):
     description = fields.Text(string='Description')
     date = fields.Date(string='Date')
     expiration_date = fields.Date(string='Expiration Date')
+    score = fields.Integer(string='Score')
 
     # Relational
     employee_id = fields.Many2many('hr.employee', string='Employee')
