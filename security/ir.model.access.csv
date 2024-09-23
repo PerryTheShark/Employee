@@ -6,3 +6,4 @@ access_emloyee_certification,employee.certification,model_employee_certification
 access_emloyee_skill,employee.skill,model_employee_skill,base.group_user,1,1,1,1
 access_emloyee_skill_score,employee.skill.score,model_employee_skill_score,base.group_user,1,1,1,1
 access_update_batch_employees_v1,employee.batch.update,model_employee_batch_update,base.group_user,1,1,1,1
+access_hr_skill_type_employee,skill.type.employee,model_skill_type,base.group_user,1,1,1,1

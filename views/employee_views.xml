@@ -30,6 +30,17 @@
                         </div>
                     </button>
                 </div>
+                <div name="button_box" class="oe_button_box">
+                    <button name="V2_open_experience_wizard" class="oe_stat_button" icon="fa-id-card-o"
+                            type="object">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="certificate_number" readonly="1"/>
+                            </span>
+                            <span class="o_stat_text">certificate</span>
+                        </div>
+                    </button>
+                </div>
                 <field name="coach_id" position="after">
                     <field name="years_of_experience"/>
                     <field name="the_past_company"/>
@@ -43,19 +54,24 @@
                             <field name="certificate_ids"/>
                         </group>
                         <group>
-                            <field mode="tree" name="score_id">
+                            <field mode="tree" name="skill_score_id">
                                 <tree>
-                                    <field name="score" widget="progressbar"/>
+                                    <field name="level_progress" widget="progressbar"/>
                                     <field name="employee_id"/>
                                     <field name="skill_id"/>
                                 </tree>
                             </field>
 <!--                            <field name="score_id"/>-->
                         </group>
-
+                        <group>
+                            <field name="show_skill_score_id"/>
+                        </group>
                     </page>
                 </xpath>
                 <xpath expr="//div[@class='oe_chatter']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
             </field>

@@ -2,7 +2,7 @@
 <odoo>
     <record id="view_employee_batch_update" model="ir.ui.view">
         <field name="name">view.employee.batch.update</field>
-        <field name="model">employee.batch.update.wizard</field>
+        <field name="model">employee.batch.update</field>
         <field name="arch" type="xml">
             <form string="Batch Update">
                 <group>

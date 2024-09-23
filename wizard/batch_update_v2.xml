@@ -6,8 +6,11 @@
         <field name="arch" type="xml">
             <form string="Batch Update">
                 <group>
-                        <field name="years_of_experience"/>
                         <field name="certification_ids"/>
+                    <group>
+                        <field name="is_update_years_of_experience" string="Update years of experience?"/>
+                        <field name="years_of_experience" attrs="{'invisible': [('is_update_years_of_experience', '=', False)]}" nolabel="1"/>
+                    </group>
                 </group>
                 <p>
                     Apply updating on the selected record(s)?

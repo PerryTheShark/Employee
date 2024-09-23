@@ -7,8 +7,9 @@
             <field name="model">employee.skill.score</field>
             <field name="arch" type="xml">
                 <tree string="skill score">
-                            <field name="score"/>
-                            <field name="employee_id"/>
+
+                            <field name="level_progress"/>
+                            <field name="employee_id" widget="many2many_tags"/>
                             <field name="skill_id"/>
                 </tree>
             </field>
@@ -22,7 +23,7 @@
                 <form string="Skill score">
                     <sheet>
                         <group>
-                            <field name="score"/>
+                            <field name="level_progress"/>
                             <field name="employee_id"/>
                             <field name="skill_id"/>
                         </group>

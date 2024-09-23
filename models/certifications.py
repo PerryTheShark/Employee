@@ -16,6 +16,8 @@ class Certifications(models.Model):
     expiration_date = fields.Date(string='Expiration Date')
     score = fields.Integer(string='Score')
 
+
     # Relational
     employee_id = fields.Many2many('hr.employee', string='Employee')
+    skill_id = fields.Many2many('employee.skill.score', string='Skill')
     #----------------------------------------- Action Methods -------
