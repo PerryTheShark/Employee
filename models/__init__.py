@@ -1,1 +1,1 @@
-from . import employee, skills, certifications, skill_type
+from . import employee, skills, certifications

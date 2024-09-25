@@ -1,9 +1,15 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_update_batch_employees,employee.batch.update.wizard,model_employee_batch_update_wizard,base.group_user,1,1,1,1
-access_manager,employee.manager,model_hr_employee,Employee.group_employee_manager,1,1,1,1
-hr.access_hr_employee_user,hr.employee user,model_hr_employee,hr.group_hr_user,1,0,0,0
-access_emloyee_certification,employee.certification,model_employee_certification,base.group_user,1,1,1,1
-access_emloyee_skill,employee.skill,model_employee_skill,base.group_user,1,1,1,1
-access_emloyee_skill_score,employee.skill.score,model_employee_skill_score,base.group_user,1,1,1,1
 access_update_batch_employees_v1,employee.batch.update,model_employee_batch_update,base.group_user,1,1,1,1
-access_hr_skill_type_employee,skill.type.employee,model_skill_type,base.group_user,1,1,1,1
+
+access_manager,employee.manager,model_hr_employee,Employee.group_employee_manager,1,1,1,1
+hr.access_hr_employee_user,hr.employee.user,model_hr_employee,hr.group_hr_user,1,0,0,0
+
+access_emloyee_certification,employee.certification,model_employee_certification,hr.group_hr_user,1,0,0,0
+access_emloyee_skill,employee.skill,model_employee_skill,hr.group_hr_user,1,0,0,0
+access_emloyee_skill_score,employee.skill.score,model_employee_skill_score,hr.group_hr_user,1,0,0,0
+
+access_emloyee_certification_manager,employee.certification.manager,model_employee_certification,group_certification_manager,1,1,1,1
+access_emloyee_skill_manager,employee.skill.manager,model_employee_skill,group_skill_manager,1,1,1,1
+access_emloyee_skill_score_manager,employee.skill.score.manager,model_employee_skill_score,group_skill_manager,1,1,1,1
+

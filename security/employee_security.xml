@@ -31,29 +31,46 @@
                    eval="[(4, ref('Employee.group_employee_experience_manager'))]"/> <!-- Inherits Employee Experience Manager -->
         </record>
 
+        <!--new group for certifications-->
+        <record id="group_certification_manager" model="res.groups">
+            <field name="name">Certification Manager</field>
+            <field name="category_id" ref="group_category_Employee"/>
+            <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+        </record>
+
+        <!--new group for skill manager-->
+        <record id="group_skill_manager" model="res.groups">
+            <field name="name">Skill Manager</field>
+            <field name="category_id" ref="group_category_Employee"/>
+            <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+        </record>
+
+        <!--new group for head manager-->
+        <record id="group_hr_employee_experience_manager_extend" model="res.groups">
+            <field name="name">Employee head manager</field>
+            <field name="category_id" ref="group_category_Employee"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('Employee.group_skill_manager'), ref('Employee.group_certification_manager')])]"/>
+        </record>
+
+        <!--        admin-->
+        <record id="hr.group_hr_manager" model="res.groups">
+            <field name="category_id" ref="base.module_category_human_resources_employees"/>
+            <field name="implied_ids" eval="[(4, ref('Employee.group_hr_employee_experience_manager_extend'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <!--        default rule for skill -->
+        <record id="hr_skills_rule" model="ir.rule">
+            <field name="name">Skill Deletion Rule</field>
+            <field name="model_id" ref="model_hr_skills"/>
+            <field name="domain_force">[('employee_skill_ids', '=', False)]</field>
+            <field name="groups" eval="[(4, ref('employee_extra.group_hr_employee_experience_manager_extend'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
     </data>
-
-    <!--    <data noupdate="0">-->
-    <!--        <record id="employee_comp_rule" model="ir.rule">-->
-    <!--            <field name="name">Employee</field>-->
-    <!--            <field name="model_id" ref="model_hr_employee"/>-->
-    <!--            <field name="domain_force">[('years_of_experience','=',0)]</field>-->
-    <!--            <field name="perm_read" eval="True"/>-->
-    <!--            <field name="perm_write" eval="False"/>-->
-    <!--            <field name="perm_create" eval="False"/>-->
-    <!--            <field name="perm_unlink" eval="False"/>-->
-    <!--        </record>-->
-    <!--    </data>-->
-<!--    <data noupdate="0">-->
-<!--        <record id="access_employee_extended_field" model="ir.model.access">-->
-<!--            <field name="name">access_employee_extended_field</field>-->
-<!--            <field name="model_id" ref="Employee.model_hr_employee"/>-->
-<!--            <field name="group_id" ref="Employee.group_extended_experience_manager"/>-->
-<!--            <field name="perm_read" eval="1"/>-->
-<!--            <field name="perm_write" eval="1"/>-->
-<!--            <field name="perm_create" eval="0"/>-->
-<!--            <field name="perm_unlink" eval="0"/>-->
-<!--        </record>-->
-
-<!--    </data>-->
 </odoo>
