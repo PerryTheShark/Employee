@@ -8,16 +8,12 @@ class Skills(models.Model):
     _name = "employee.skill"
     _description = "skill"
     _order = "id desc"
-
-    # ---------------------------------------- Default Methods -------
-
     # ---------------------------------------- Fields Declaration ----
     name = fields.Char(string='Name')
     description = fields.Text(string='Description')
 
     # Relational
     score_id = fields.One2many('employee.skill.score','skill_id' , string='Score')
-    skill_type_id = fields.Many2one('skill.type', string='Skill Type')
     # ------------------------
 
 class SkillScore(models.Model):
@@ -26,14 +22,13 @@ class SkillScore(models.Model):
     _order = "id desc"
 
     name = fields.Char(string='Skill Name', required=True)
-    #----   SQL Constraints   ----
+    #-----------------------------------------   SQL Constraints   ---------------------
     _sql_constraints = [
         ('check_level_progress', 'CHECK(level_progress BETWEEN 0 AND 100)', "Progress should be a number between 0 and 100."),
 
     ]
-    # ---------------------------------------- Default Methods -------
 
-    # ---------------------------------------- Fields Declaration ----
+    # ---------------------------------------- Fields Declaration ----------------------
     level_progress = fields.Integer(string="Progress", help="Progress from zero knowledge (0%) to fully mastered (100%).")
     color = fields.Integer("Color Index")
 

@@ -54,17 +54,13 @@
                             <field name="certificate_ids"/>
                         </group>
                         <group>
-                            <field mode="tree" name="skill_score_id">
+                            <field mode="tree" name="show_skill_score_id">
                                 <tree>
-                                    <field name="level_progress" widget="progressbar"/>
+                                    <field name="level_progress" widget="progressbar" style="text-align: left;"/>
                                     <field name="employee_id"/>
                                     <field name="skill_id"/>
                                 </tree>
                             </field>
-<!--                            <field name="score_id"/>-->
-                        </group>
-                        <group>
-                            <field name="show_skill_score_id"/>
                         </group>
                     </page>
                 </xpath>

@@ -11,15 +11,6 @@ class HrEmployee(models.Model):
 
     # ---------------------------------------- Default Methods -------
 
-    # @api.model
-    # def write(self,vals_list):
-    #     res = super(HrEmployee, self).write(vals_list)
-    #     if 'years_of_experience' in vals_list:
-    #         for record in self:
-    #             if record.years_of_experience < 0:
-    #                 raise ValidationError("The years of experience must be positive")
-    #     return res
-
     @api.model
     def create(self, vals):
         res = super(HrEmployee, self).create(vals)
@@ -81,16 +72,6 @@ class HrEmployee(models.Model):
             # If 'AWS' certification is found and years_of_experience is less than 2, set it to 2
             if aws_certification and record.years_of_experience < 2:
                 record.years_of_experience = max(record.years_of_experience, 2)
-
-    # @api.onchange("certificate_ids")
-    # def _onchage_skills_to_certificate(self):
-    #     skill_in_certificates = []
-    #     skil_of_employee = self.skill_score_id.mapped('skill_id')
-    #     for record in self.certificate_ids:
-    #         self.skill_score_id = [(4, skill.id) for skill in record.skill_id]
-    #     if len(skill_in_certificates) > 20:
-    #         raise ValidationError("The employee cannot have more than 20 skills")
-
 
     # ---------------------------------------- Compute and Search Methods -------
 

@@ -61,16 +61,15 @@
         </record>
 
         <!--        default rule for skill -->
-        <record id="hr_skills_rule" model="ir.rule">
+        <record id="hr_skill_rule_strict" model="ir.rule">
             <field name="name">Skill Deletion Rule</field>
-            <field name="model_id" ref="model_hr_skills"/>
-            <field name="domain_force">[('employee_skill_ids', '=', False)]</field>
-            <field name="groups" eval="[(4, ref('employee_extra.group_hr_employee_experience_manager_extend'))]"/>
-            <field name="perm_read" eval="0"/>
+            <field name="model_id" ref="model_employee_skill"/>
+            <field name="domain_force">[('name', '!=', '0')]</field>
+            <field name="groups" eval="[(4, ref('Employee.group_hr_employee_experience_manager_extend'))]"/>
+            <field name="perm_read" eval="1"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="1"/>
         </record>
-
     </data>
 </odoo>

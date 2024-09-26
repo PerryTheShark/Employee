@@ -19,11 +19,8 @@
             <field name="name">employee.skill.view.form</field>
             <field name="model">employee.skill</field>
             <field name="arch" type="xml">
-                <form string="Library Book">
+                <form string="Skill">
                     <sheet>
-                        <group>
-                            <field name="skill_type_id"/>
-                        </group>
                         <group>
                             <field name="name"/>
                             <field name="description"/>
