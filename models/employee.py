@@ -26,7 +26,7 @@ class HrEmployee(models.Model):
     certification_skill = []
 
     # Relational
-    certificate_ids = fields.Many2many('employee.certification', string='Certificates')
+    certificate_ids = fields.Many2many('employee.certification', string='Certifications')
     skill_score_id = fields.Many2many('employee.skill.score', string='self skill')
     show_skill_score_id = fields.Many2many('employee.skill.score', string='total skill', compute='_compute_show_skill_score_id')
 

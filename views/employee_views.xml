@@ -37,7 +37,7 @@
                             <span class="o_stat_value">
                                 <field name="certificate_number" readonly="1"/>
                             </span>
-                            <span class="o_stat_text">certificate</span>
+                            <span class="o_stat_text">certification</span>
                         </div>
                     </button>
                 </div>
@@ -49,11 +49,12 @@
                             class="btn-secondary" icon="fa-pencil"/>
                 </field>
                 <xpath expr="//page[@name='public']" position="before">
-                    <page name="cetificate" string="Certifications">
+                    <page name="cetificate">
                         <group>
                             <field name="certificate_ids"/>
                         </group>
-                        <group>
+
+                        <group attrs="{'invisible': [('certificate_number', '=', 0)]}">
                             <field mode="tree" name="show_skill_score_id">
                                 <tree>
                                     <field name="level_progress" widget="progressbar" style="text-align: left;"/>

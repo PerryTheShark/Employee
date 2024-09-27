@@ -34,7 +34,7 @@
                             <field name="expiration_date"/>
                         </group>
                         <notebook>
-                            <page string="Employees earned certificate">
+                            <page string="Employees earned certificattion">
                                 <field name="employee_id"/>
                             </page>
                         </notebook>

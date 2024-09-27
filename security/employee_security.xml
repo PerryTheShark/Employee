@@ -63,12 +63,23 @@
         <!--        default rule for skill -->
         <record id="hr_skill_rule_strict" model="ir.rule">
             <field name="name">Skill Deletion Rule</field>
-            <field name="model_id" ref="model_employee_skill"/>
-            <field name="domain_force">[('name', '!=', '0')]</field>
+            <field name="model_id" ref="model_employee_skill_score"/>
+            <field name="domain_force">[('employee_id', '=', False)]</field>
             <field name="groups" eval="[(4, ref('Employee.group_hr_employee_experience_manager_extend'))]"/>
-            <field name="perm_read" eval="1"/>
+            <field name="perm_read" eval="0"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="hr_skill_rule_admin" model="ir.rule">
+            <field name="name">Skill Deletion Rule</field>
+            <field name="model_id" ref="model_employee_skill_score"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('hr.group_hr_manager'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
             <field name="perm_unlink" eval="1"/>
         </record>
     </data>
