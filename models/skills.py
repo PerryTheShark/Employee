@@ -21,7 +21,7 @@ class SkillScore(models.Model):
     _description = "score of skill of employee"
     _order = "id desc"
 
-    name = fields.Char(string='Skill Name', required=True)
+    name = fields.Char(string='Skill Name')
     #-----------------------------------------   SQL Constraints   ---------------------
     _sql_constraints = [
         ('check_level_progress', 'CHECK(level_progress BETWEEN 0 AND 100)', "Progress should be a number between 0 and 100."),

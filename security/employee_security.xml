@@ -5,27 +5,15 @@
             <field name="sequence">1</field>
         </record>
 
-        <record id="group_employee_user" model="res.groups">
-            <field name="name">User</field>
-            <field name="category_id" ref="group_category_Employee"/>
-            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-        </record>
-
-        <record id="group_employee_manager" model="res.groups">
-            <field name="name">Manager</field>
-            <field name="category_id" ref="group_category_Employee"/>
-            <field name="implied_ids" eval="[(4, ref('group_employee_user'))]"/>
-        </record>
-
         <record id="group_employee_experience_manager" model="res.groups">
             <field name="name">Employee Experience Manager</field>
             <field name="category_id" ref="group_category_Employee"/>
-            <field name="implied_ids" eval="[(4, ref('group_employee_user'))]"/>
+            <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
         </record>
 
         <!-- New Group inheriting Employee Experience Manager -->
         <record id="group_extended_experience_manager" model="res.groups">
-            <field name="name">Extended Experience Manager</field>
+            <field name="name">Extended Experience Manager and manage path company field</field>
             <field name="category_id" ref="group_category_Employee"/>
             <field name="implied_ids"
                    eval="[(4, ref('Employee.group_employee_experience_manager'))]"/> <!-- Inherits Employee Experience Manager -->
@@ -47,10 +35,16 @@
 
         <!--new group for head manager-->
         <record id="group_hr_employee_experience_manager_extend" model="res.groups">
-            <field name="name">Employee head manager</field>
+            <field name="name">Employee skill &amp; certification manager</field>
             <field name="category_id" ref="group_category_Employee"/>
             <field name="implied_ids"
                    eval="[(6, 0, [ref('Employee.group_skill_manager'), ref('Employee.group_certification_manager')])]"/>
+        </record>
+
+        <record id="group_employee_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="group_category_Employee"/>
+            <field name="implied_ids" eval="[(6, 0, [ref('Employee.group_skill_manager'),ref('Employee.group_extended_experience_manager'), ref('Employee.group_certification_manager')])]"/>
         </record>
 
         <!--        admin-->

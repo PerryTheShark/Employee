@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="employee_root_menu" name="employee management">
-        <menuitem id="employee_menu" name="employee" action="employee_action"/>
-        <menuitem id="certification_menu" name="Certification" action="action_employee_certification"/>
-        <menuitem id="skill_menu_parent" name="Skill">
+        <menuitem id="certification_menu" name="Certification" action="action_employee_certification" parent="hr.menu_hr_root"/>
+        <menuitem id="skill_menu_parent" name="Skill" parent="hr.menu_hr_root">
             <menuitem id="skill_menu" name="Skill Type" action="action_employee_skill"/>
             <menuitem id="skill_score_menu" name="Skill Score" action="action_employee_skill_score"/>
         </menuitem>
 
-    </menuitem>
 </odoo>

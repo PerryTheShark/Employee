@@ -53,14 +53,35 @@
                         <group>
                             <field name="certificate_ids"/>
                         </group>
-
-                        <group attrs="{'invisible': [('certificate_number', '=', 0)]}">
-                            <field mode="tree" name="show_skill_score_id">
+                        <button name="update_year_of_experience" string="Update years of experience"
+                                type="object" class="btn-primary"/>
+                        <field name="skill_number" attrs="{'invisible': 1}"/>
+                        <group attrs="{'invisible': [('skill_number', '=', 0)]}">
+                            <!--                            <field mode="tree" name="show_skill_score_id">-->
+                            <!--                                <tree>-->
+                            <!--                                    <field name="level_progress" widget="progressbar" style="text-align: left;"/>-->
+                            <!--                                    <field name="employee_id"/>-->
+                            <!--                                    <field name="skill_id"/>-->
+                            <!--                                </tree>-->
+                            <!--                            </field>-->
+                            <field mode="tree,form" name="skill_score_id">
                                 <tree>
                                     <field name="level_progress" widget="progressbar" style="text-align: left;"/>
-                                    <field name="employee_id"/>
+                                    <field name="employee_id">
+                                    </field>
                                     <field name="skill_id"/>
                                 </tree>
+                                <form>
+                                    <field name="level_progress" widget="progressbar" style="text-align: left;" string="level progress:"/>
+                                    <field mode="tree" name="employee_id">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="work_email"/>
+                                            <field name="years_of_experience"/>
+                                        </tree>
+                                    </field>
+                                    <field name="skill_id"/>
+                                </form>
                             </field>
                         </group>
                     </page>
