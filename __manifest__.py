@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 # More info at https://www.odoo.com/documentation/master/reference/module.html
 {
-    "name": "Human resources",
+    'name': "Employee Management",
+    'summary': """Employee Management""",
+    'description': """Employee Management""",
+    'category': 'Uncategorized',
+    'website': "https://123.com/",
     "depends": [
         "base",
         "web",
